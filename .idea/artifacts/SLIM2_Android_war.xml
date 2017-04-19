@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="SLIM2_Android:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="com.ecovacs.test.war">
+      <element id="artifact" artifact-name="SLIM2_Android:war exploded" />
+    </root>
+  </artifact>
+</component>
