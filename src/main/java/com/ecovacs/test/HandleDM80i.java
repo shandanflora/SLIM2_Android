@@ -253,13 +253,13 @@ class HandleDM80i {
         TranslateErrorReport.getInstance().init(list);
     }
 
-    void translate_init(String strColName){
-        Map<String, String> tranMapCommon = TranslateIntl.getInstance().readExcel("Translate.xlsx", strColName);
+    void translate_init(String strColNameCommon, String strColName){
+        Map<String, String> tranMapCommon = TranslateIntl.getInstance().readExcel("Translate.xlsx", strColNameCommon);
         if(tranMapCommon.isEmpty()){
             logger.error("The language map is empty!!!");
             return;
         }
-        Map<String, String> tranMap = TranslateIntl.getInstance().readExcel("Random_translate.xlsx", strColName);
+        Map<String, String> tranMap = TranslateIntl.getInstance().readExcel("SLIM2.xlsx", strColName);
         if(tranMap.isEmpty()){
             logger.error("The language map is empty!!!");
             return;
@@ -304,7 +304,7 @@ class HandleDM80i {
     }
 
     boolean translateMain(){
-        //login("Japan", PropertyData.getProperty("hotmail_email"), PropertyData.getProperty("login_pass"));
+        login("Japan", PropertyData.getProperty("hotmail_email"), PropertyData.getProperty("login_pass"));
         //
         MainActivity.getInstance().showActivity();
         //
@@ -321,7 +321,7 @@ class HandleDM80i {
     boolean translateNetworkSetting(){
         MainActivity.getInstance().showActivity();
         MainActivity.getInstance().clickAdd();
-        SelectDEEBOTActivity.getInstance().selectDM80i(PropertyData.getProperty("DM80I_NETWORK"));
+        SelectDEEBOTActivity.getInstance().selectDevice(PropertyData.getProperty("SLIM2"));
         NetworkSettingActivity.getInstance().showActivity();
         boolean bRes = NetworkSettingActivity.getInstance().translate(languageMap);
         NetworkSettingActivity.getInstance().clickBack();
@@ -332,7 +332,7 @@ class HandleDM80i {
     boolean translateConnectGuide(){
         MainActivity.getInstance().showActivity();
         MainActivity.getInstance().clickAdd();
-        SelectDEEBOTActivity.getInstance().selectDM80i(PropertyData.getProperty("DM80I_NETWORK"));
+        SelectDEEBOTActivity.getInstance().selectDevice(PropertyData.getProperty("SLIM2"));
         NetworkSettingActivity.getInstance().showActivity();
         NetworkSettingActivity.getInstance().clickNext();
         boolean bRes = ConnectGuideActivity.getInstance().translate(languageMap);
@@ -345,7 +345,7 @@ class HandleDM80i {
     boolean translateNetworkSettingActivity_ing(){
         MainActivity.getInstance().showActivity();
         MainActivity.getInstance().clickAdd();
-        SelectDEEBOTActivity.getInstance().selectDM80i(PropertyData.getProperty("DM80I_NETWORK"));
+        SelectDEEBOTActivity.getInstance().selectDevice(PropertyData.getProperty("SLIM2"));
         NetworkSettingActivity.getInstance().showActivity();
         NetworkSettingActivity.getInstance().clickNext();
         ConnectGuideActivity.getInstance().clickNext();
@@ -358,7 +358,7 @@ class HandleDM80i {
     boolean translateFailNetworkSetting(){
         MainActivity.getInstance().showActivity();
         MainActivity.getInstance().clickAdd();
-        SelectDEEBOTActivity.getInstance().selectDM80i(PropertyData.getProperty("DM80I_NETWORK"));
+        SelectDEEBOTActivity.getInstance().selectDevice(PropertyData.getProperty("SLIM2"));
         NetworkSettingActivity.getInstance().showActivity();
         NetworkSettingActivity.getInstance().clickNext();
         ConnectGuideActivity.getInstance().clickNext();
@@ -423,7 +423,7 @@ class HandleDM80i {
 
     boolean translateUnibotClean(){
         MainActivity.getInstance().showActivity();
-        MainActivity.getInstance().clickSLIM2();
+        MainActivity.getInstance().clickDevice("SLIM2");
         UnibotCleanActivity.getInstance().showActivity();
         UnibotCleanActivity.getInstance().showText("-");
         boolean bResult = UnibotCleanActivity.getInstance().translate(languageMap);
@@ -434,7 +434,7 @@ class HandleDM80i {
 
     boolean translateUnibotSetting(){
         //will delete
-        MainActivity.getInstance().clickSLIM2();
+        //MainActivity.getInstance().clickDevice("SLIM2");
         //
         UnibotCleanActivity.getInstance().clickSetting();
         /*SettingActivity.getInstance().showActivity();
