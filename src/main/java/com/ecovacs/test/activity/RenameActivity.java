@@ -18,8 +18,8 @@ public class RenameActivity {
 
     @FindBy(id = "com.ecovacs.ecosphere.intl:id/titleContent")
     private MobileElement title = null;
-    @FindBy(id = "com.ecovacs.ecosphere.intl:id/right")
-    private MobileElement btnSave = null;
+    /*@FindBy(id = "com.ecovacs.ecosphere.intl:id/right")
+    private MobileElement btnSave = null;*/
     @FindBy(xpath = "//android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.TextView[1]")
     private MobileElement textViewMessage = null;
 
@@ -46,19 +46,19 @@ public class RenameActivity {
                     strLanguage, "Rename", title.getText(),
                     tranMap.get("random_deebot_rename"), "fail");
         }
-        boolean bbtnSave = btnSave.getText().equalsIgnoreCase(tranMap.get("random_deebot_save"));
+        /*boolean bbtnSave = btnSave.getText().equalsIgnoreCase(tranMap.get("random_deebot_save"));
         if (!bbtnSave){
             TranslateErrorReport.getInstance().insetNewLine(
                     strLanguage, "Rename", btnSave.getText(),
                     tranMap.get("random_deebot_save"), "fail");
-        }
+        }*/
         boolean btextViewMessage = textViewMessage.getText().equalsIgnoreCase(tranMap.get("random_deebot_hint_modify_nickname"));
         if (!btextViewMessage){
             TranslateErrorReport.getInstance().insetNewLine(
                     strLanguage, "Rename", textViewMessage.getText(),
                     tranMap.get("random_deebot_hint_modify_nickname"), "fail");
         }
-        return btitle && bbtnSave && btextViewMessage;
+        return btitle /*&& bbtnSave*/ && btextViewMessage;
     }
 
     public boolean translate(Map<String, String> tranMap){
