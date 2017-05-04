@@ -166,20 +166,22 @@
         <version>2.18.1</version>
         <configuration>
           <suiteXmlFiles>
-            <suiteXmlFile>res\${xmlFileName}</suiteXmlFile>
-          </suiteXmlFiles>
-          <properties>
-            <property>
-              <name>usedefaultlisteners</name>
-              <value>false</value>
-            </property>
-            <property>
-              <name>listener</name>
-              <value>org.uncommons.reportng.HTMLReporter</value>
-            </property>
-          </properties>
-          <workingDirectory>target/</workingDirectory>
-          <!-- <forkMode>always</forkMode> -->
+            <suiteXmlFile>res\test_English.xml</suiteXmlFile>
+            <suiteXmlFile>res\test_Japanese.xml</suiteXmlFile>
+          <!--<suiteXmlFile>res\testng_fake.xml</suiteXmlFile>-->
+        </suiteXmlFiles>
+        <properties>
+          <property>
+            <name>usedefaultlisteners</name>
+            <value>false</value>
+          </property>
+          <property>
+            <name>listener</name>
+            <value>org.uncommons.reportng.HTMLReporter</value>
+          </property>
+        </properties>
+        <workingDirectory>target/</workingDirectory>
+        <!-- <forkMode>always</forkMode> -->
         </configuration>
       </plugin>
     </plugins>

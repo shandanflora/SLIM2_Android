@@ -1,0 +1,41 @@
+{
+  "error111":{
+    "ctl":"<ctl td='error' errno='111'/>"
+  },
+  "error104":{
+    "ctl":"<ctl td='error' errno='104'/>"
+  },
+  "error103":{
+    "ctl":"<ctl td='error' errno='103'/>"
+  },
+  "error109":{
+    "ctl":"<ctl td='error' errno='109'/>"
+  },
+  "error108":{
+    "ctl":"<ctl td='error' errno='108'/>"
+  },
+  "error110":{
+    "ctl":"<ctl td='error' errno='110'/>"
+  },
+  "error102":{
+    "ctl":"<ctl td='error' errno='102'/>"
+  },
+  "error101":{
+    "ctl":"<ctl td='error' errno='101'/>"
+  },
+  "sideBrush5":{
+    "ctl":"<ctl td='LifeSpan' type='SideBrush' val='5' total='100'/>"
+  },
+  "filter5":{
+    "ctl":"<ctl td='LifeSpan' type='DustCaseHeap' val='5' total='100'/>"
+  },
+  "sideBrush0":{
+    "ctl":"<ctl td='LifeSpan' type='SideBrush' val='0' total='100'/>"
+  },
+  "filter0":{
+    "ctl":"<ctl td='LifeSpan' type='DustCaseHeap' val='0' total='100'/>"
+  },
+  "goCharge":{
+    "ctl":"<ctl td='ChargeState'><charge type='Going'/></ctl>"
+  }
+}

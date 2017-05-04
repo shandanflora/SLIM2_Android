@@ -20,6 +20,8 @@ public class SettingActivity {
 
     @FindBy(id = "com.ecovacs.ecosphere.intl:id/titleContent")
     private MobileElement title = null;
+    @FindBy(id = "com.ecovacs.ecosphere.intl:id/title_back")
+    private MobileElement back = null;
     @FindBy(id = "com.ecovacs.ecosphere.intl:id/work_log")
     private MobileElement textViewWorkLog = null;
     @FindBy(xpath = "//android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[2]/android.widget.TextView[1]")
@@ -49,6 +51,10 @@ public class SettingActivity {
     public void init(AndroidDriver driver){
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
         this.driver = driver;
+    }
+
+    public void clickBack(){
+        back.click();
     }
 
     public void clickWorkLog(){

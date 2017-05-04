@@ -1,5 +1,6 @@
 package com.ecovacs.test.activity;
 
+import com.ecovacs.test.common.Common;
 import com.ecovacs.test.common.TranslateErrorReport;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
@@ -131,5 +132,16 @@ public class ConsumableActivity {
         boolean bResetFilter = translateReset(tranMap, btnHEPA,
                 tranMap.get("random_deebot_consumable_reset_hint_filter"));
         return bStatic && bResetSide && bResetFilter;
+    }
+
+    public void resetAccessories(){
+        btnSide.click();
+        btnReset.click();
+        promptSure.click();
+        Common.getInstance().waitForSecond(500);
+        btnHEPA.click();
+        btnReset.click();
+        promptSure.click();
+        Common.getInstance().waitForSecond(500);
     }
 }
