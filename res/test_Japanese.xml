@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<!-- allow-return-values 默认值为FALSE,表示返回值将被忽略 -->
+<suite name="Translation" allow-return-values="true">
+    <test verbose="2" name="TestMethods" preserve-order="true">
+        <classes>
+            <class name="com.ecovacs.test.TestIntlTranslate_Japanese">
+                <methods>
+                    <include name="translateWelcome"></include>
+                    <include name="translateLogin"></include>
+                    <include name="translateForget"></include>
+                    <include name="translateCountryRegion"></include>
+                    <include name="translateRegister"></include>
+                    <include name="translateMain"></include>
+                    <!--<include name="translateSelectDEEBOT"></include>
+                    <include name="translateNetworkSetting"></include>
+                    <include name="translateConnectGuide"></include>
+                    <include name="translateNetworkSettingActivity_ing"></include>
+                    <include name="translateFailNetworkSetting"></include>
+                    <include name="translateMore"></include>
+                    <include name="translateAbout"></include>
+                    <include name="translateUserAgree"></include>
+                    <include name="translateLanguage"></include>
+                    <include name="translateHelpCenter"></include>
+                    <include name="translateChangePass"></include>
+                    <include name="translateUnibotClean"></include>
+                    <include name="translateUnibotSetting"></include>
+                    <include name="translateWorkLog"></include>
+                    <include name="translateContinueClean"></include>
+                    <include name="translateContinueClean_Status"></include>
+                    <include name="translateContinueClean_SameTime"></include>
+                    <include name="translateConsumable"></include>
+                    <include name="translateRename"></include>
+                    <exclude name="translateFirmwareVer"></exclude>
+                    <include name="translateNoTimeSchedule"></include>
+                    <include name="translateNewSchedule"></include>
+                    <include name="translateRepetition"></include>
+                    <include name="translateSelectWeekOfDate"></include>
+                    <include name="translateSelectWeekend"></include>
+                    <include name="translateSelectWorkday"></include>
+                    <include name="translateSelectEveryday"></include>
+                    <include name="translateAddTimeSchedule_sun"></include>
+                    <include name="translateAddTimeSchedule_mon"></include>
+                    <include name="translateAddTimeSchedule_tues"></include>
+                    <include name="translateAddTimeSchedule_wed"></include>
+                    <include name="translateAddTimeSchedule_thurs"></include>
+                    <include name="translateAddTimeSchedule_fri"></include>
+                    <include name="translateAddTimeSchedule_sat"></include>
+                    <include name="translateAddTimeSchedule_weekends"></include>
+                    <include name="translateAddTimeSchedule_workday"></include>
+                    <include name="translateAddTimeSchedule_everyday"></include>
+                    <include name="translateDelSchedule_Edit"></include>
+                    <include name="translateDelSchedule_Swipe"></include>
+                    <include name="translateAddTimeSchedule_repeat"></include>
+                    <include name="translateOverTimeSchedule"></include>-->
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

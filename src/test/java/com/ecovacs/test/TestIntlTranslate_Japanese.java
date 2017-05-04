@@ -1,7 +1,6 @@
 package com.ecovacs.test;
 
 import com.ecovacs.test.common.Common;
-import com.ecovacs.test.common.PropertyData;
 import io.appium.java_client.android.AndroidDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -12,7 +11,7 @@ import org.testng.annotations.Test;
  * Created by ecosqa on 17/2/7.
  * test translate of intl app
  */
-public class TestIntlTranslate_English {
+public class TestIntlTranslate_Japanese {
     private AndroidDriver driver = null;
 
     @BeforeClass
@@ -22,14 +21,14 @@ public class TestIntlTranslate_English {
             return;
         }
         HandleDM80i.getInstance().init(driver);
-        HandleDM80i.getInstance().translate_init("English", "English");
+        HandleDM80i.getInstance().translate_init("Japanese", "Japanese");
         HandleDM80i.getInstance().translateErrorReport_init();
     }
 
     @AfterClass
     public void tearDown(){
-        HandleDM80i.getInstance().changeLanguage(PropertyData.getProperty("Japanese"));
-        driver.quit();
+        //HandleDM80i.getInstance().changeLanguage(PropertyData.getProperty("Japanese"));
+        //driver.quit();
     }
 
     @Test
