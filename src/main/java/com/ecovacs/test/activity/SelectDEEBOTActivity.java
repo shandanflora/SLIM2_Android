@@ -71,7 +71,7 @@ public class SelectDEEBOTActivity {
         return staticUI(tranMap);
     }
 
-    public boolean selectDM80i(String strDeebot){
+    public boolean selectDevice(String strDeebot){
 
         String str = "new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textContains(";
         str = str + "\"" + strDeebot + "\"" + ").instance(0))";

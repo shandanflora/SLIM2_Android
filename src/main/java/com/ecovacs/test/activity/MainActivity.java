@@ -64,13 +64,13 @@ public class MainActivity {
         textViewAdd.click();
     }
 
-    public void clickSLIM2(){
+    public void clickDevice(String strDev){
         List<MobileElement> rlList = listView.findElements(By.className("android.widget.LinearLayout"));
         for (MobileElement rl:rlList){
             List<MobileElement> textList = rl.findElements(By.className("android.widget.TextView"));
             for (MobileElement text:textList){
                 logger.info("child elment--" + text.getText());
-                if (text.getText().contains(PropertyData.getProperty("SLIM2"))){
+                if (text.getText().contains(PropertyData.getProperty(strDev))){
                     text.click();
                     break;
                 }
