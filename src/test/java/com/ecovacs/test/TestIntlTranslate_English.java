@@ -28,7 +28,7 @@ public class TestIntlTranslate_English {
 
     @AfterClass
     public void tearDown(){
-        HandleDM80i.getInstance().changeLanguage(PropertyData.getProperty("Japanese"));
+        HandleDM80i.getInstance().changeLanguage(PropertyData.getProperty("German"));
         driver.quit();
     }
 
@@ -73,8 +73,13 @@ public class TestIntlTranslate_English {
     }
 
     @Test
-    public void translateConnectGuide(){
-        Assert.assertTrue(HandleDM80i.getInstance().translateConnectGuide());
+    public void translateConnectGuide1(){
+        Assert.assertTrue(HandleDM80i.getInstance().translateConnectGuide1());
+    }
+
+    @Test
+    public void translateConnectGuide2(){
+        Assert.assertTrue(HandleDM80i.getInstance().translateConnectGuide2());
     }
 
     @Test
