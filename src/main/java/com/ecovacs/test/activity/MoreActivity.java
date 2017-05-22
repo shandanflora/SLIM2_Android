@@ -28,6 +28,8 @@ public class MoreActivity {
     private AndroidElement rowLanguage = null;
     @FindBy(id = "com.ecovacs.ecosphere.intl:id/tv_zhongJian")
     private AndroidElement title = null;
+    @FindBy(id = "com.ecovacs.ecosphere.intl:id/rll_bark")
+    private AndroidElement back = null;
     @FindBy(xpath = "//android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.widget.TextView[1]")
     private AndroidElement textAccount = null;
     @FindBy(xpath = "//android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[2]/android.widget.RelativeLayout[1]/android.widget.TextView[1]")
@@ -55,6 +57,11 @@ public class MoreActivity {
     public void clickLogout(){
         btnLogout.click();
     }
+
+    public void clickBack(){
+        back.click();
+    }
+
 
     public boolean showMoreActivity(){
         return Common.getInstance().showActivity(btnLogout);
