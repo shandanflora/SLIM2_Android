@@ -32,12 +32,28 @@ public class HandleFake {
         return handleFake;
     }
 
+    void changeLanguage(String strLanguage){
+        UnibotCleanActivity.getInstance().clickBack();
+        MainActivity.getInstance().showActivity();
+        MainActivity.getInstance().clickMore();
+        MoreActivity.getInstance().clickLanguage();
+        LanguageActivity.getInstance().selectLanguage(strLanguage);
+        //return main
+        MoreActivity.getInstance().clickBack();
+        MainActivity.getInstance().showActivity();
+        /*if(!logout()){
+            logger.info("logout failed!!!");
+        }*/
+    }
+
     public void init(AndroidDriver driver){
         ConsumableActivity.getInstance().init(driver);
         MainActivity.getInstance().init(driver);
         SettingActivity.getInstance().init(driver);
         UnibotCleanActivity.getInstance().init(driver);
         AlertActivity.getInsatance().init(driver);
+        MoreActivity.getInstance().init(driver);
+        LanguageActivity.getInstance().init(driver);
     }
 
     void translateErrorReport_init(){
@@ -51,6 +67,7 @@ public class HandleFake {
             logger.error("The language map is empty!!!");
             return;
         }
+        tranMap.put("language", strColName);
         languageMap = tranMap;
     }
 
@@ -233,7 +250,14 @@ public class HandleFake {
     private void resetConsumable(){
         UnibotCleanActivity.getInstance().clickSetting();
         SettingActivity.getInstance().clickConsumable();
-        ConsumableActivity.getInstance().resetAccessories();
+        ConsumableActivity.getInstance().resetSidebrush();
+        List<NameValuePair> paras = HttpRequestUtils.getInstance().getParaFromJson("command.json", "sideBrush100");
+        HttpRequestUtils.getInstance().HttpPost(PropertyData.getProperty("url"), paras);
+        Common.getInstance().waitForSecond(1500);
+        ConsumableActivity.getInstance().resetFilter();
+        paras = HttpRequestUtils.getInstance().getParaFromJson("command.json", "filter100");
+        HttpRequestUtils.getInstance().HttpPost(PropertyData.getProperty("url"), paras);
+        Common.getInstance().waitForSecond(1500);
         ConsumableActivity.getInstance().clickBack();
         SettingActivity.getInstance().clickBack();
     }

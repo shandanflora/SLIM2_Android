@@ -35,6 +35,12 @@
   "filter0":{
     "ctl":"<ctl td='LifeSpan' type='DustCaseHeap' val='0' total='100'/>"
   },
+  "sideBrush100":{
+    "ctl":"<ctl td='LifeSpan' type='SideBrush' val='100' total='100'/>"
+  },
+  "filter100":{
+    "ctl":"<ctl td='LifeSpan' type='DustCaseHeap' val='100' total='100'/>"
+  },
   "goCharge":{
     "ctl":"<ctl td='ChargeState'><charge type='Going'/></ctl>"
   }

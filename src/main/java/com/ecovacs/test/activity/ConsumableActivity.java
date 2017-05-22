@@ -134,14 +134,15 @@ public class ConsumableActivity {
         return bStatic && bResetSide && bResetFilter;
     }
 
-    public void resetAccessories(){
+    public void resetSidebrush(){
         btnSide.click();
         btnReset.click();
         promptSure.click();
-        Common.getInstance().waitForSecond(500);
+    }
+
+    public void resetFilter(){
         btnHEPA.click();
         btnReset.click();
         promptSure.click();
-        Common.getInstance().waitForSecond(500);
     }
 }

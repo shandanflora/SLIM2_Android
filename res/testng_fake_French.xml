@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<!-- allow-return-values 默认值为FALSE,表示返回值将被忽略 -->
+<suite name="Translation" allow-return-values="true">
+    <test verbose="2" name="TestMethods" preserve-order="true">
+        <classes>
+            <class name="com.ecovacs.test.TestIntlTranslate_Fake_French">
+                <methods>
+                    <include name="translateAlertBump"></include>
+                    <include name="translateAlertDrop"></include>
+                    <include name="translateAlertWheel"></include>
+                    <include name="translateAlertSideBrush"></include>
+                    <include name="translateDustBin"></include>
+                    <include name="translateSuspendDeebot"></include>
+                    <include name="translateSideBrushWillExpire"></include>
+                    <include name="translateFilterWillExpire"></include>
+                    <include name="translateSideBrushExpired"></include>
+                    <include name="translateFilterExpired"></include>
+                    <include name="translateLowBatteryStopCharger"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
