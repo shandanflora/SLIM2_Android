@@ -205,7 +205,7 @@ public class UnibotCleanActivity {
         for (int i = 0; i < 7; i++){
             //auto
             textViewDeAuto.click();
-            Common.getInstance().waitForSecond(1000);
+            Common.getInstance().waitForSecond(2500);
             //standby
             textViewDeAuto.click();
             logger.info("i--" + i);
@@ -232,12 +232,13 @@ public class UnibotCleanActivity {
         textViewWarnTip.click();
     }
 
-    private boolean translateMalPrompt(Map<String, String> tranMap, String strKey, String strPage, boolean bSupspend){
+    private boolean translateMalPrompt(Map<String, String> tranMap, String strKey, String strPage, boolean bSuspend){
         String strLanguage = tranMap.get("language");
         boolean bTitle = false;
-        if(!bSupspend){
+        if(!bSuspend){
             //System.out.println(bSupspend);
             Common.getInstance().showActivity(titlePrompt);
+            Common.getInstance().waitForSecond(1000);
             String strTitle = titlePrompt.getText().trim();
             bTitle = strTitle.equalsIgnoreCase
                     (tranMap.get("random_deebot_state_error").trim());
@@ -262,7 +263,7 @@ public class UnibotCleanActivity {
                     tranMap.get("random_deebot_confirm"), "fail");
         }
         surePrompt.click();
-        if (bSupspend){
+        if (bSuspend){
             return bContent && bSure;
         }
         return bTitle && bContent && bSure;
