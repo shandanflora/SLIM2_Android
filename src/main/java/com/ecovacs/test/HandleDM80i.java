@@ -229,9 +229,9 @@ class HandleDM80i {
 
     void changeLanguage(String strLanguage){
         //return deebot clean
-        //Common.getInstance().goBack(androidDriver, 1);
+        Common.getInstance().goBack(androidDriver, 1);
         //return main
-        //Common.getInstance().goBack(androidDriver, 1);
+        Common.getInstance().goBack(androidDriver, 1);
         /*if(!login("Japan", PropertyData.getProperty("hotmail_email"), PropertyData.getProperty("login_pass"))){
             logger.error("login failed!!!");
             return;
@@ -243,6 +243,7 @@ class HandleDM80i {
         //return main
         Common.getInstance().goBack(androidDriver, 1);
         MainActivity.getInstance().showActivity();
+        //will not comment
         if(!logout()){
             logger.info("logout failed!!!");
         }
@@ -264,6 +265,7 @@ class HandleDM80i {
             logger.error("The language map is empty!!!");
             return;
         }
+        tranMap.put("language", strColName);
         tranMap.putAll(tranMapCommon);
         languageMap = tranMap;
     }
@@ -312,6 +314,7 @@ class HandleDM80i {
     }
 
     boolean translateSelectDEEBOT(){
+        MainActivity.getInstance().showActivity();
         MainActivity.getInstance().clickAdd();
         boolean bRes = SelectDEEBOTActivity.getInstance().translate(languageMap);
         SelectDEEBOTActivity.getInstance().clickBack();
@@ -321,7 +324,7 @@ class HandleDM80i {
     boolean translateNetworkSetting(){
         MainActivity.getInstance().showActivity();
         MainActivity.getInstance().clickAdd();
-        SelectDEEBOTActivity.getInstance().selectDevice(PropertyData.getProperty("SLIM2"));
+        SelectDEEBOTActivity.getInstance().selectDevice(PropertyData.getProperty("NETWORK_DEV"));
         NetworkSettingActivity.getInstance().showActivity();
         boolean bRes = NetworkSettingActivity.getInstance().translate(languageMap);
         NetworkSettingActivity.getInstance().clickBack();
@@ -329,13 +332,28 @@ class HandleDM80i {
         return bRes;
     }
 
-    boolean translateConnectGuide(){
+    boolean translateConnectGuide1(){
         MainActivity.getInstance().showActivity();
         MainActivity.getInstance().clickAdd();
-        SelectDEEBOTActivity.getInstance().selectDevice(PropertyData.getProperty("SLIM2"));
+        SelectDEEBOTActivity.getInstance().selectDevice(PropertyData.getProperty("NETWORK_DEV"));
         NetworkSettingActivity.getInstance().showActivity();
         NetworkSettingActivity.getInstance().clickNext();
-        boolean bRes = ConnectGuideActivity.getInstance().translate(languageMap);
+        boolean bRes = ConnectGuideActivity.getInstance().translate(languageMap, "random_deebot_network_power_on");
+        ConnectGuideActivity.getInstance().clickBack();
+        NetworkSettingActivity.getInstance().clickBack();
+        SelectDEEBOTActivity.getInstance().clickBack();
+        return bRes;
+    }
+
+    boolean translateConnectGuide2(){
+        MainActivity.getInstance().showActivity();
+        MainActivity.getInstance().clickAdd();
+        SelectDEEBOTActivity.getInstance().selectDevice(PropertyData.getProperty("NETWORK_DEV"));
+        NetworkSettingActivity.getInstance().showActivity();
+        NetworkSettingActivity.getInstance().clickNext();
+        ConnectGuideActivity.getInstance().clickNext();
+        boolean bRes = ConnectGuideActivity.getInstance().translate(languageMap, "random_deebot_connect_tip_silm2");
+        ConnectGuideActivity.getInstance().clickBack();
         ConnectGuideActivity.getInstance().clickBack();
         NetworkSettingActivity.getInstance().clickBack();
         SelectDEEBOTActivity.getInstance().clickBack();
@@ -345,9 +363,10 @@ class HandleDM80i {
     boolean translateNetworkSettingActivity_ing(){
         MainActivity.getInstance().showActivity();
         MainActivity.getInstance().clickAdd();
-        SelectDEEBOTActivity.getInstance().selectDevice(PropertyData.getProperty("SLIM2"));
+        SelectDEEBOTActivity.getInstance().selectDevice(PropertyData.getProperty("NETWORK_DEV"));
         NetworkSettingActivity.getInstance().showActivity();
         NetworkSettingActivity.getInstance().clickNext();
+        ConnectGuideActivity.getInstance().clickNext();
         ConnectGuideActivity.getInstance().clickNext();
         boolean bRes = NetworkSettingActivity_ing.getInstance().translate(languageMap);
         NetworkSettingActivity.getInstance().clickBack();
@@ -358,11 +377,12 @@ class HandleDM80i {
     boolean translateFailNetworkSetting(){
         MainActivity.getInstance().showActivity();
         MainActivity.getInstance().clickAdd();
-        SelectDEEBOTActivity.getInstance().selectDevice(PropertyData.getProperty("SLIM2"));
+        SelectDEEBOTActivity.getInstance().selectDevice(PropertyData.getProperty("NETWORK_DEV"));
         NetworkSettingActivity.getInstance().showActivity();
         NetworkSettingActivity.getInstance().clickNext();
         ConnectGuideActivity.getInstance().clickNext();
-        Common.getInstance().waitForSecond(1000 * 60 * 2);
+        ConnectGuideActivity.getInstance().clickNext();
+        Common.getInstance().waitForSecond(1000 * 60 * 3);
         FailNetworkSettingActivity.getInstance().showActivity();
         boolean bRes = FailNetworkSettingActivity.getInstance().translate(languageMap);
         FailNetworkSettingActivity.getInstance().clickBack();
@@ -581,7 +601,10 @@ class HandleDM80i {
         for (int i = 1; i < 6; i++){
             RepetitionActivity.getInstance().clickWeekOfDate(i);
         }
-        RepetitionActivity.getInstance().clickWeekOfDate(Common.getInstance().getWeekIndex());
+        int iIndex = Common.getInstance().getWeekIndex();
+        if (iIndex != 1){
+            RepetitionActivity.getInstance().clickWeekOfDate(iIndex);
+        }
         RepetitionActivity.getInstance().clickBack();
         NewScheduleActivity.getInstance().confirmAdd();
         boolean bRes = TimeScheduleActivity.getInstance().addOneTime(languageMap, 8);
@@ -714,6 +737,23 @@ class HandleDM80i {
         SettingActivity.getInstance().clickTimeSchedule();
         TimeScheduleActivity.getInstance().showActivity();
         return TimeScheduleActivity.getInstance().translate(languageMap);
+    }
+
+    boolean repeatSchedule(){
+        MainActivity.getInstance().showActivity();
+        MainActivity.getInstance().clickDevice("DM88");
+        Common.getInstance().waitForSecond(3000);
+        UnibotCleanActivity.getInstance().clickSetting();
+        SettingActivity.getInstance().clickTimeSchedule();
+        TimeScheduleActivity.getInstance().clickAddSchedule();
+        NewScheduleActivity.getInstance().addTime_M88();
+        for (int i = 0; i < 7; i++){
+            RepetitionActivity.getInstance().clickWeekOfDate(i);
+        }
+        RepetitionActivity.getInstance().clickBack();
+        NewScheduleActivity.getInstance().confirmAdd();
+        TimeScheduleActivity.getInstance().delAllTasks();
+        return true;
     }
 
 }
