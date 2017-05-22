@@ -39,6 +39,8 @@ public class NewScheduleActivity {
     private MobileElement btnDelSchedule = null;
     @FindBy(xpath = "//android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.TimePicker[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.NumberPicker[1]")
     private MobileElement pickerH = null;
+    @FindBy(xpath = "//android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[2]/android.widget.TimePicker[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.NumberPicker[1]")
+    private MobileElement pickerH_M88 = null;
     @FindBy(xpath = "//android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.TimePicker[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.NumberPicker[2]")
     private MobileElement pickerM = null;
     @FindBy(id = "com.ecovacs.ecosphere.intl:id/content")
@@ -120,7 +122,10 @@ public class NewScheduleActivity {
         for(int i = 1; i < 6; i++){
             RepetitionActivity.getInstance().clickWeekOfDate(i);
         }
-        RepetitionActivity.getInstance().clickWeekOfDate(Common.getInstance().getWeekIndex());
+        int iIndex = Common.getInstance().getWeekIndex();
+        if (iIndex != 1){
+            RepetitionActivity.getInstance().clickWeekOfDate(iIndex);
+        }
         RepetitionActivity.getInstance().clickBack();
         boolean brepeatValue = repeatValue.getText().equalsIgnoreCase(tranMap.get("random_deebot_workdays"));
         if (!brepeatValue){
@@ -174,6 +179,11 @@ public class NewScheduleActivity {
 
         return brepeatValue[0] && brepeatValue[1] && brepeatValue[2] && brepeatValue[3] &&
                 brepeatValue[4] && brepeatValue[5] && brepeatValue[6];
+    }
+
+    public void addTime_M88(){
+        Common.getInstance().setStartTime(driver, pickerH_M88);
+        repeatValue.click();
     }
 
     public void addTime(){
