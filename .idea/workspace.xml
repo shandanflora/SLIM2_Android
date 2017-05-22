@@ -3,12 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="49c55e09-7c8e-4b3f-a6a7-50342f3a814c" name="Default" comment="commit for original files">
       <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/ecovacs/test/activity/ConnectGuide1Activity.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/SLIM2.xlsx" afterPath="$PROJECT_DIR$/src/main/resources/SLIM2.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/Translate.xlsx" afterPath="$PROJECT_DIR$/src/main/resources/Translate.xlsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/commonData.properties" afterPath="$PROJECT_DIR$/src/main/resources/commonData.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/country.json" afterPath="$PROJECT_DIR$/src/main/resources/country.json" />
     </list>
     <ignored path="SLIM2_Android.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -1138,7 +1133,7 @@
       <workItem from="1494832506036" duration="2651000" />
       <workItem from="1495070706854" duration="1971000" />
       <workItem from="1495102292822" duration="2008000" />
-      <workItem from="1495415641806" duration="1847000" />
+      <workItem from="1495415641806" duration="1972000" />
     </task>
     <task id="LOCAL-00001" summary="commit for original files">
       <created>1492587644963</created>
@@ -1273,7 +1268,14 @@
       <option name="project" value="LOCAL" />
       <updated>1495417470363</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="commit for update config files">
+      <created>1495417509676</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1495417509676</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1309,7 +1311,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="169559000" />
+    <option name="totallyTimeSpent" value="169684000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1384,7 +1386,8 @@
     <MESSAGE value="commit for adding wait time" />
     <MESSAGE value="commit for test malfunction and consumable" />
     <MESSAGE value="commit for adding test case" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit for adding test case" />
+    <MESSAGE value="commit for update config files" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit for update config files" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
