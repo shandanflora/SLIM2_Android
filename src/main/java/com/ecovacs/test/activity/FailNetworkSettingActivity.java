@@ -67,7 +67,12 @@ public class FailNetworkSettingActivity {
                     strLanguage, "FailNetworkSetting", textTipTitle.getText(),
                     tranMap.get("random_deebot_network_fail"), "fail");
         }
-        String strError = tranMap.get("config_net_error0").replace("\\n", "\n");
+        String title = tranMap.get("config_net_error_title") + ("\n");
+        String strDes = tranMap.get("config_net_error0").replace("\\n", "\n") + ("\n");
+        String strDes7 = ("7.") + tranMap.get("config_net_error7");
+        System.out.println(strDes7);
+        String strError = title + strDes + strDes7;
+        System.out.println(strError);
         boolean btextTipDescription = textTipDescription.getText().equalsIgnoreCase(strError);
         if(!btextTipDescription){
             TranslateErrorReport.getInstance().insetNewLine(
