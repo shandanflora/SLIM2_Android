@@ -49,7 +49,7 @@ public class ConnectGuideActivity {
         back.click();
     }
 
-    private boolean staticUI(Map<String, String> tranMap){
+    private boolean staticUI(Map<String, String> tranMap, String strTipKey){
         String strLanguage = tranMap.get("language");
         boolean bTitle = title.getText().equalsIgnoreCase(tranMap.get("random_deebot_select_guide"));
         if(!bTitle){
@@ -57,7 +57,7 @@ public class ConnectGuideActivity {
                     strLanguage, "ConnectGuide", title.getText(),
                     tranMap.get("random_deebot_select_guide"), "fail");
         }
-        String strTips = tranMap.get("random_deebot_connect_tip").replace("\\n", "");
+        String strTips = tranMap.get(strTipKey);
         boolean btextTips = textTips.getText().trim().equalsIgnoreCase(strTips.trim());
         if(!btextTips){
             TranslateErrorReport.getInstance().insetNewLine(
@@ -73,8 +73,8 @@ public class ConnectGuideActivity {
         return bTitle && btextTips && bbtnNext;
     }
 
-    public boolean translate(Map<String, String> tranMap){
-        return staticUI(tranMap);
+    public boolean translate(Map<String, String> tranMap, String strTipKey){
+        return staticUI(tranMap, strTipKey);
     }
 
 
