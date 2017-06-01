@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <!-- allow-return-values 默认值为FALSE,表示返回值将被忽略 -->
-<suite name="Translation_Japanese" allow-return-values="true">
+<suite name="Translation_HK_ZH" allow-return-values="true">
     <test verbose="2" name="TestMethods" preserve-order="true">
         <classes>
-            <class name="com.ecovacs.test.TestIntlTranslate_Japanese">
+            <class name="com.ecovacs.test.TestIntlTranslate_HK_ZH">
                 <methods>
                     <!--<include name="translateWelcome"></include>
                     <include name="translateLogin"></include>
@@ -14,7 +14,8 @@
                     <include name="translateMain"></include>
                     <!--<include name="translateSelectDEEBOT"></include>
                     <include name="translateNetworkSetting"></include>
-                    <include name="translateConnectGuide"></include>
+                    <include name="translateConnectGuide1"></include>
+                    <include name="translateConnectGuide2"></include>
                     <include name="translateNetworkSettingActivity_ing"></include>
                     <include name="translateFailNetworkSetting"></include>
                     <include name="translateMore"></include>

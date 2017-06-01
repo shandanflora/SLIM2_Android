@@ -166,12 +166,23 @@
         <version>2.18.1</version>
         <configuration>
           <suiteXmlFiles>
-              <suiteXmlFile>res\test_English.xml</suiteXmlFile>
+              <!--<suiteXmlFile>res\test_English.xml</suiteXmlFile>
               <suiteXmlFile>res\test_German.xml</suiteXmlFile>
               <suiteXmlFile>res\test_Spanish.xml</suiteXmlFile>
               <suiteXmlFile>res\test_French.xml</suiteXmlFile>
               <suiteXmlFile>res\test_Portuguese.xml</suiteXmlFile>
               <suiteXmlFile>res\test_Italian.xml</suiteXmlFile>
+              <suiteXmlFile>res\test_ES_LA.xml</suiteXmlFile>
+              <suiteXmlFile>res\test_FR_CA.xml</suiteXmlFile>
+              <suiteXmlFile>res\test_Japanese.xml</suiteXmlFile>
+              <suiteXmlFile>res\test_TW_ZH.xml</suiteXmlFile>
+              <suiteXmlFile>res\test_HK_ZH.xml</suiteXmlFile>
+              <suiteXmlFile>res\test_Malay.xml</suiteXmlFile>
+              <suiteXmlFile>res\test_Korean.xml</suiteXmlFile>
+              <suiteXmlFile>res\test_Thai.xml</suiteXmlFile>-->
+              <suiteXmlFile>res\test_LA_Portuguese.xml</suiteXmlFile>
+              <suiteXmlFile>res\test_Hebrew.xml</suiteXmlFile>
+              <suiteXmlFile>res\test_Ukrainian.xml</suiteXmlFile>
               <!--<suiteXmlFile>res\testng_fake_English.xml</suiteXmlFile>
               <suiteXmlFile>res\testng_fake_German.xml</suiteXmlFile>
               <suiteXmlFile>res\testng_fake_Spanish.xml</suiteXmlFile>
