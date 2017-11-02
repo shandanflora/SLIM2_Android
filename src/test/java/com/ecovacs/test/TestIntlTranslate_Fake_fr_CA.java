@@ -23,7 +23,7 @@ public class TestIntlTranslate_Fake_fr_CA {
         }
         HandleFake.getInstance().init(driver);
         HandleFake.getInstance().translate_init("fr-CA");
-        //HandleFake.getInstance().translateErrorReport_init();
+        HandleFake.getInstance().translateErrorReport_init();
     }
 
     @AfterClass

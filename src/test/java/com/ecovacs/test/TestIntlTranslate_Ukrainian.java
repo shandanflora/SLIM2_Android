@@ -23,7 +23,7 @@ public class TestIntlTranslate_Ukrainian {
         }
         HandleDM80i.getInstance().init(driver);
         HandleDM80i.getInstance().translate_init("Ukrainian", "Ukrainian");
-        //HandleDM80i.getInstance().translateErrorReport_init();
+        HandleDM80i.getInstance().translateErrorReport_init();
     }
 
     @AfterClass

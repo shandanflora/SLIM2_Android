@@ -23,7 +23,7 @@ public class TestIntlTranslate_LA_Portuguese {
         }
         HandleDM80i.getInstance().init(driver);
         HandleDM80i.getInstance().translate_init("pt-BR", "LA-Portuguese");
-        HandleDM80i.getInstance().translateErrorReport_init();
+        //HandleDM80i.getInstance().translateErrorReport_init();
     }
 
     @AfterClass

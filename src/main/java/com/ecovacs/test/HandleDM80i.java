@@ -229,9 +229,9 @@ class HandleDM80i {
 
     void changeLanguage(String strLanguage){
         //return deebot clean
-        Common.getInstance().goBack(androidDriver, 1);
+        //Common.getInstance().goBack(androidDriver, 1);
         //return main
-        Common.getInstance().goBack(androidDriver, 1);
+        //Common.getInstance().goBack(androidDriver, 1);
         /*if(!login("Japan", PropertyData.getProperty("hotmail_email"), PropertyData.getProperty("login_pass"))){
             logger.error("login failed!!!");
             return;
@@ -244,9 +244,9 @@ class HandleDM80i {
         Common.getInstance().goBack(androidDriver, 1);
         MainActivity.getInstance().showActivity();
         //will not comment
-        if(!logout()){
+        /*if(!logout()){
             logger.info("logout failed!!!");
-        }
+        }*/
     }
 
     void translateErrorReport_init(){
@@ -306,7 +306,7 @@ class HandleDM80i {
     }
 
     boolean translateMain(){
-        login("Japan", PropertyData.getProperty("hotmail_email"), PropertyData.getProperty("login_pass"));
+        //login("Japan", PropertyData.getProperty("hotmail_email"), PropertyData.getProperty("login_pass"));
         //
         MainActivity.getInstance().showActivity();
         //

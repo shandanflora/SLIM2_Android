@@ -11,7 +11,7 @@
   <properties>
     <slf4j.version>1.7.1</slf4j.version>
     <logback.version>1.0.7</logback.version>
-    <junit.version>3.8.1</junit.version>
+    <junit.version>4.12</junit.version>
     <testng.version>6.9.10</testng.version>
     <reportng.version>1.1.4</reportng.version>
     <inject.version>4.0</inject.version>
@@ -37,7 +37,7 @@
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>3.8.1</version>
+      <version>${junit.version}</version>
       <scope>test</scope>
     </dependency>
     <!-- https://mvnrepository.com/artifact/org.apache.poi/poi-scratchpad -->
@@ -163,7 +163,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
-        <version>2.18.1</version>
+        <version>2.19.1</version>
         <configuration>
           <suiteXmlFiles>
               <!--<suiteXmlFile>res\test_English.xml</suiteXmlFile>
@@ -179,16 +179,27 @@
               <suiteXmlFile>res\test_HK_ZH.xml</suiteXmlFile>
               <suiteXmlFile>res\test_Malay.xml</suiteXmlFile>
               <suiteXmlFile>res\test_Korean.xml</suiteXmlFile>
-              <suiteXmlFile>res\test_Thai.xml</suiteXmlFile>-->
+              <suiteXmlFile>res\test_Thai.xml</suiteXmlFile>
               <suiteXmlFile>res\test_LA_Portuguese.xml</suiteXmlFile>
-              <suiteXmlFile>res\test_Hebrew.xml</suiteXmlFile>
+              <suiteXmlFile>res\test_Hebrew.xml</suiteXmlFile>-->
               <suiteXmlFile>res\test_Ukrainian.xml</suiteXmlFile>
               <!--<suiteXmlFile>res\testng_fake_English.xml</suiteXmlFile>
               <suiteXmlFile>res\testng_fake_German.xml</suiteXmlFile>
               <suiteXmlFile>res\testng_fake_Spanish.xml</suiteXmlFile>
               <suiteXmlFile>res\testng_fake_French.xml</suiteXmlFile>
               <suiteXmlFile>res\testng_fake_Portuguese.xml</suiteXmlFile>
-              <suiteXmlFile>res\testng_fake_Italian.xml</suiteXmlFile>-->
+              <suiteXmlFile>res\testng_fake_Italian.xml</suiteXmlFile>
+              <suiteXmlFile>res\testng_fake_es_LA.xml</suiteXmlFile>
+              <suiteXmlFile>res\testng_fake_fr_CA.xml</suiteXmlFile>
+              <suiteXmlFile>res\testng_fake_Japanese.xml</suiteXmlFile>
+              <suiteXmlFile>res\testng_fake_TW_ZH.xml</suiteXmlFile>
+              <suiteXmlFile>res\testng_fake_HK_ZH.xml</suiteXmlFile>
+              <suiteXmlFile>res\testng_fake_Malay.xml</suiteXmlFile>
+              <suiteXmlFile>res\testng_fake_Korean.xml</suiteXmlFile>
+              <suiteXmlFile>res\testng_fake_Thai.xml</suiteXmlFile>
+              <suiteXmlFile>res\testng_fake_LA_Portuguese.xml</suiteXmlFile>
+              <suiteXmlFile>res\testng_fake_Hebrew.xml</suiteXmlFile>
+              <suiteXmlFile>res\testng_fake_Ukrainian.xml</suiteXmlFile>-->
         </suiteXmlFiles>
         <properties>
           <property>
